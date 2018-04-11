@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @TestPropertySource(locations = "classpath:application-test.properties")
-public class FlywayDemoApplicationTests {
+public class ScaffoldApplicationTests {
 
 	@Test
 	public void contextLoads() {

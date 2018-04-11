@@ -20,6 +20,8 @@ docker run --name scaffold-mysql -p 3309:3306  -e MYSQL_ROOT_PASSWORD=password -
 
 + change `spring.datasource.username` and `spring.datasource.password` as per your mysql installation
 
+
+<!---
 **3. Build and run the app using maven**
 ```bash
 cd scaffold-demo
@@ -32,6 +34,7 @@ You can also run the app without packaging it using -
 ```bash
 mvn spring-boot:run
 ```
+--->
 
 **4. Build docker image and run**
 ```bash
