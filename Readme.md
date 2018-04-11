@@ -1,0 +1,42 @@
+# Spring Boot Flyway MySQL Scaffold
+
+## Requirements
+
+1. Java - 1.8.x
+
+2. Maven - 3.x.x
+
+3. MySQL - 5.x.x
+
+## Steps to setup
+
+**1. Setup Mysql database**
+```bash
+docker run --name scaffold-mysql -p 3309:3306  -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=scaffold -e MYSQL_USER=mysql -e MYSQL_PASSWORD=mysql -d mysql:5.6
+```
+**2. Change mysql username and password as per your installation**
+
++ open `src/main/resources/application.properties`
+
++ change `spring.datasource.username` and `spring.datasource.password` as per your mysql installation
+
+**3. Build and run the app using maven**
+
+```bash
+cd scaffold-demo
+mvn package
+java -jar target/scaffold-0.0.1-SNAPSHOT.jar
+```
+
+You can also run the app without packaging it using -
+
+```bash
+mvn spring-boot:run
+```
+
+
+
+
+```
+docker run --name scaffold-mysql -p 3309:3306  -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=scaffold -e MYSQL_USER=mysql -e MYSQL_PASSWORD=mysql -d mysql:5.6
+```
