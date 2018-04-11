@@ -21,7 +21,6 @@ docker run --name scaffold-mysql -p 3309:3306  -e MYSQL_ROOT_PASSWORD=password -
 + change `spring.datasource.username` and `spring.datasource.password` as per your mysql installation
 
 **3. Build and run the app using maven**
-
 ```bash
 cd scaffold-demo
 mvn package
@@ -34,9 +33,9 @@ You can also run the app without packaging it using -
 mvn spring-boot:run
 ```
 
-
-
-
+**4. Build docker image and run**
+```bash
+./mvnw install dockerfile:build
+docker run -p 8080:8080 --name scaffold-app --link scaffold-mysql:db -d springio/scaffold
 ```
-docker run --name scaffold-mysql -p 3309:3306  -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=scaffold -e MYSQL_USER=mysql -e MYSQL_PASSWORD=mysql -d mysql:5.6
-```
+You can see the website at localhost:8080/users
